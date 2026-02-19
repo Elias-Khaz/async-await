@@ -10,6 +10,13 @@ function flipCoin() {
     });
 }
 
-flipCoin()
-    .then(result => console.log(result))
-    .catch(error => console.log(error));
+async function playGame() {
+    try {
+        const result = await flipCoin();
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+playGame();
