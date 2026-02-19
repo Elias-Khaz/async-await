@@ -14,9 +14,17 @@ async function playGame() {
     try {
         const result = await flipCoin();
         console.log(result);
+
+        console.log("Fetching advice...");
+
+        const response = await fetch("https://api.adviceslip.com/advice")
+        const data = await response.json();
+
+        console.log("Your advice:", data.slip.advice);
+
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 playGame();
